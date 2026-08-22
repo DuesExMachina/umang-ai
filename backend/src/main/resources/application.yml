@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: setu-scheme-catalogue
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/setu}
+    username: ${DATABASE_USERNAME:setu}
+    password: ${DATABASE_PASSWORD:setu}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    locations: classpath:db/migration
