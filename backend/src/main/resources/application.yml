@@ -11,3 +11,6 @@ spring:
     open-in-view: false
   flyway:
     locations: classpath:db/migration
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY:}

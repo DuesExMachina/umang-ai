@@ -13,6 +13,7 @@ public final class UserProfile {
     public static Builder builder() { return new Builder(); }
     public Optional<Object> attribute(String name) { return Optional.ofNullable(attributes.get(name)); }
     public boolean hasAttribute(String name) { return attributes.containsKey(name) && attributes.get(name) != null; }
+    public Map<String, Object> attributes() { return attributes; }
 
     public static final class Builder {
         private final Map<String, Object> values = new LinkedHashMap<>();
