@@ -13,5 +13,9 @@ public class EligibilityRule {
     @Column(nullable = false) private LocalDate effectiveFrom;
     private LocalDate effectiveTo;
     protected EligibilityRule() { }
+    public EligibilityRule(UUID id, String ruleJson, LocalDate effectiveFrom, LocalDate effectiveTo) {
+        this.id = id; this.ruleJson = ruleJson; this.effectiveFrom = effectiveFrom; this.effectiveTo = effectiveTo;
+    }
+    void attachTo(Scheme scheme) { this.scheme = scheme; }
     public UUID getId() { return id; } public String getRuleJson() { return ruleJson; } public LocalDate getEffectiveFrom() { return effectiveFrom; } public LocalDate getEffectiveTo() { return effectiveTo; }
 }

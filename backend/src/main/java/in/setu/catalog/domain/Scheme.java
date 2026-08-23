@@ -34,4 +34,5 @@ public class Scheme {
     @PreUpdate void onUpdate() { updatedAt = Instant.now(); }
     public UUID getId() { return id; } public String getCode() { return code; } public String getTitle() { return title; } public String getSummary() { return summary; } public SchemeCategory getCategory() { return category; } public boolean isSyntheticDemo() { return syntheticDemo; } public String getDisclaimer() { return disclaimer; } public PublicationStatus getStatus() { return status; } public int getCataloguePriority() { return cataloguePriority; } public String getVersion() { return version; }
     public List<EligibilityRule> getEligibilityRules() { return List.copyOf(eligibilityRules); } public List<RequiredDocument> getRequiredDocuments() { return List.copyOf(requiredDocuments); } public ApplicationInformation getApplicationInformation() { return applicationInformation; } public List<SchemeSourceInformation> getSourceInformation() { return List.copyOf(sourceInformation); }
+    public void addEligibilityRule(EligibilityRule rule) { rule.attachTo(this); eligibilityRules.add(rule); }
 }
